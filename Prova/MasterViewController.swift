@@ -53,6 +53,8 @@ class MasterViewController: UITableViewController {
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
 
+        // get rotation notification for layouting stuff if needed
+        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             self.clearsSelectionOnViewWillAppear = false
@@ -89,6 +91,9 @@ class MasterViewController: UITableViewController {
         //set the default tableview design
         self.tableView.backgroundColor = bgColor
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone && UIApplication.sharedApplication().statusBarOrientation.isLandscape   {
+            self.tableView.rowHeight = 80;
+        }
         
         // start the app loading the articles
         loadArticles()
@@ -294,6 +299,27 @@ class MasterViewController: UITableViewController {
         
         
     }
+    
+    
+    
+    // MARK: - orientation fixes
+    
+    func manageRowHeight() {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone && UIApplication.sharedApplication().statusBarOrientation.isLandscape  {
+            self.tableView.rowHeight = 80.0;
+        } else {
+            self.tableView.rowHeight = 138.0;
+            
+        }
+    }
+    
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        manageRowHeight()
+        self.tableView.reloadData()
+    }
+    
+    
     
     
     override func didReceiveMemoryWarning() {

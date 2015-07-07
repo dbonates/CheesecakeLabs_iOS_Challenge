@@ -17,7 +17,6 @@
 		37AE8D6D1B4C3F3A00536AE2 /* Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D6C1B4C3F3A00536AE2 /* Lib.swift */; };
 		37AE8D6F1B4C402F00536AE2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D6E1B4C402F00536AE2 /* Article.swift */; };
 		37AE8D731B4C444F00536AE2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D721B4C444F00536AE2 /* ArticleTableViewCell.swift */; };
-		37AE8D771B4C4C1B00536AE2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D761B4C4C1B00536AE2 /* README.md */; };
 		C49BE207A4862C6F596D7566 /* Pods_Prova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE23C005245F07008004EA26 /* Pods_Prova.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -305,7 +304,6 @@
 				37AE8D4D1B4C390100536AE2 /* DetailViewController.swift in Sources */,
 				37AE8D4B1B4C390100536AE2 /* MasterViewController.swift in Sources */,
 				37AE8D491B4C390100536AE2 /* AppDelegate.swift in Sources */,
-				37AE8D771B4C4C1B00536AE2 /* README.md in Sources */,
 				37AE8D6D1B4C3F3A00536AE2 /* Lib.swift in Sources */,
 				37AE8D731B4C444F00536AE2 /* ArticleTableViewCell.swift in Sources */,
 				37AE8D6F1B4C402F00536AE2 /* Article.swift in Sources */,

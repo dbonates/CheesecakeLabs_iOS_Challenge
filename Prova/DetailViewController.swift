@@ -68,7 +68,24 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.titleLbl.text = "Choose one item from the list. You can use the menu button to open the list."
+        self.autdataLbl.hidden = true
+        self.contentTxt.hidden = true
+        self.articleImg.hidden = true
+        
+        self.view.backgroundColor = bgColor
+
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            
+            var frame = self.articleImg.frame
+            frame.size.height = 500
+            self.articleImg.frame = frame
+            self.titleLbl.font = UIFont(name: "American Typewriter", size: 28.0)
+            self.autdataLbl.font = UIFont(name: "American Typewriter", size: 22.0)
+            self.contentTxt.font = UIFont(name: "Helvetica", size: 22.0)
+        }
+        
         self.updateView()
     }
 

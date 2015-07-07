@@ -20,6 +20,12 @@ class ArticleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        
+        self.articleImageView.layer.cornerRadius = self.articleImageView.frame.size.width/2
+        self.articleImageView.clipsToBounds = true
+        self.articleImageView.backgroundColor = darkLightColor
+        self.articleImageView.layer.borderWidth = 1.0
+        self.articleImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        
         
         self.backgroundColor = bgColor;
     }
@@ -43,7 +49,6 @@ class ArticleTableViewCell: UITableViewCell {
         self.titleLbl.textColor = grayLightColor
         self.authorsLbl.textColor = grayLightColor
         self.articleImageView.image = convertImageToGrayScale(self.articleImageView.image!)
-        println("visto")
     }
     
     func configureNotRead() {
