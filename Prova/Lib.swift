@@ -27,3 +27,19 @@ func stringToDate(dateStr:String) -> NSDate {
     
     return dateFound
 }
+
+
+// A little func to convert image into grayscale
+func convertImageToGrayScale(_image:UIImage) -> UIImage {
+    
+    let imageRect : CGRect = CGRectMake(0, 0, _image.size.width, _image.size.height);
+    let colorSpace : CGColorSpaceRef = CGColorSpaceCreateDeviceGray();
+    let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.None.rawValue)
+    let context : CGContextRef = CGBitmapContextCreate(nil, Int(_image.size.width), Int(_image.size.height), 8, 0, colorSpace, bitmapInfo)
+    CGContextDrawImage(context, imageRect, _image.CGImage)
+    let imageRef : CGImageRef = CGBitmapContextCreateImage(context)
+    let newImage : UIImage = UIImage(CGImage: imageRef)!
+    
+    return newImage;
+    
+}

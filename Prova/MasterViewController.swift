@@ -38,6 +38,11 @@ class MasterViewController: UITableViewController {
     
     // Using a cache for images
     var imageCache = [String:UIImage]()
+    
+    
+    // persistent data system
+    var readArticles = [String:Bool]()
+    var dataFilePath: String?
 
 
     override func awakeFromNib() {
@@ -69,6 +74,8 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // the persistent system is simple and just track the status of items
+        checkForHistory()
         
         // configure splitview for layouting purposes on universal app (iphone & ipad)
         if let split = self.splitViewController {
@@ -88,7 +95,7 @@ class MasterViewController: UITableViewController {
         
     }
     
-    
+
     
     //  using Alamofire for network stuff
     func loadArticles() {
@@ -124,11 +131,34 @@ class MasterViewController: UITableViewController {
             
             var read : Bool = false
             
+            if(readArticles[title] == true) {
+                read = true
+            } else {
+                readArticles[title] = false; //force it to be present, if not
+            }
             
             self.articles.append(Article(_title: title, _dateStr: date, _authors: authors, _image: image, _website: website, _content: content, _readStatus:read))
         }
         
         
+    }
+    
+    // MARK: - persistent data stuff
+    
+    func checkForHistory() {
+        let filemgr = NSFileManager.defaultManager()
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        
+        let docsDir = dirPaths[0] as! String
+        dataFilePath = docsDir.stringByAppendingPathComponent("data.archive")
+        
+        if filemgr.fileExistsAtPath(dataFilePath!) {
+            readArticles =  NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath!) as! [String:Bool]
+        }
+    }
+    
+    func saveReadArticles() {
+        NSKeyedArchiver.archiveRootObject(readArticles, toFile: dataFilePath!)
     }
     
     
@@ -215,7 +245,12 @@ class MasterViewController: UITableViewController {
             */
             if let img = self.imageCache[imgUrlStr] {
                 
-                cell.articleImageView?.image = img
+                if(articles[indexPath.row].readStatus == true) {
+                    cell.articleImageView?.image = convertImageToGrayScale(img)
+                } else {
+                    cell.articleImageView?.image = img
+                }
+
                 
             }
             else
@@ -237,6 +272,29 @@ class MasterViewController: UITableViewController {
         return cell;
     }
 
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.articles[indexPath.row].readStatus = true
+        
+        let cell : ArticleTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleTableViewCell
+        
+        cell.configureRead()
+        
+        
+        // on iPad at vertical orientation it closes the list
+        self.splitViewController!.toggleMasterView()
+        
+        // save the read list
+        readArticles[self.articles[indexPath.row].title!] = true;
+        
+        saveReadArticles()
+        
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

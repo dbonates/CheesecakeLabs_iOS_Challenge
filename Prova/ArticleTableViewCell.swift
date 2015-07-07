@@ -32,19 +32,21 @@ class ArticleTableViewCell: UITableViewCell {
         self.authorsLbl!.sizeToFit()
         
         if(article.readStatus!) {
-            configureViewed()
+            configureRead()
         } else {
-            configureNotViewed()
+            configureNotRead()
         }
     }
     
-    func configureViewed() {
+    func configureRead() {
         self.accessoryType = UITableViewCellAccessoryType.Checkmark
         self.titleLbl.textColor = grayLightColor
         self.authorsLbl.textColor = grayLightColor
+        self.articleImageView.image = convertImageToGrayScale(self.articleImageView.image!)
+        println("visto")
     }
     
-    func configureNotViewed() {
+    func configureNotRead() {
         self.accessoryType = UITableViewCellAccessoryType.None
         self.titleLbl.textColor = UIColor.whiteColor()
         self.authorsLbl.textColor = yellowColor
