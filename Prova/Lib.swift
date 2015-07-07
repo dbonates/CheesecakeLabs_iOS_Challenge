@@ -17,3 +17,13 @@ let yellowColor = UIColor(red:0.976,  green:0.773,  blue:0.243, alpha:1)
 let grayLightColor = UIColor(red:0.639,  green:0.639,  blue:0.639, alpha:1)
 let redLightColor = UIColor(red:0.843,  green:0.267,  blue:0.259, alpha:1)
 
+
+// get string date fetched and turns it into a NSDate object
+func stringToDate(dateStr:String) -> NSDate {
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "MM/dd/yyyy"
+    let dateFound = dateFormatter.dateFromString(dateStr)!
+    
+    return dateFound
+}

@@ -23,15 +23,21 @@ extension UISplitViewController {
 }
 
 class MasterViewController: UITableViewController {
+    
+    // Sort menu view
+    @IBOutlet weak var sortMenuView: UIView!
+    @IBOutlet weak var dateSortBtn: UIButton!
+    @IBOutlet weak var titleSortBtn: UIButton!
+    @IBOutlet weak var authorSortBtn: UIButton!
+    @IBOutlet weak var websiteSortBtn: UIButton!
 
     var detailViewController: DetailViewController? = nil
     
-    let articlesLink = "http://daniels-macbook-pro.local:5757/data.json"
+    let articlesLink = "http://www.ckl.io/challenge/"
     var articles: [Article] = []
     
     // Using a cache for images
     var imageCache = [String:UIImage]()
-    
 
 
     override func awakeFromNib() {
@@ -47,6 +53,15 @@ class MasterViewController: UITableViewController {
             self.clearsSelectionOnViewWillAppear = false
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
+        
+        
+        // configuring the navbar for whole app
+        UINavigationBar.appearance().barTintColor = redLightColor
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+
+        
     }
     
     // MARK: - Loaded!
@@ -61,8 +76,12 @@ class MasterViewController: UITableViewController {
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
         
-        //set the deafault tableview background
+        
+        self.sortMenuView.backgroundColor = bgColor
+        
+        //set the default tableview design
         self.tableView.backgroundColor = bgColor
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         // start the app loading the articles
         loadArticles()
@@ -113,14 +132,34 @@ class MasterViewController: UITableViewController {
     }
     
     
+    // MARK: - Sorting functions & related
     
-    
+    @IBAction func sortArticles(sender: AnyObject) {
+        
+        
+        if(sender as! NSObject == self.titleSortBtn) {
+            self.articles = self.articles.sorted({$0.title < $1.title})
+        }
+        else if(sender as! NSObject == self.websiteSortBtn) {
+            self.articles = self.articles.sorted({$0.website < $1.website})
+        }
+        else if(sender as! NSObject == self.authorSortBtn) {
+            self.articles = self.articles.sorted({$0.authors < $1.authors})
+        }
+        else if(sender as! NSObject == self.dateSortBtn) {
+            
+            // in this case, most recent first (descending)
+            self.articles = self.articles.sorted({$0.date!.timeIntervalSinceNow > $1.date!.timeIntervalSinceNow})
+            self.tableView.reloadData()
+        }
+        
+        
+        self.tableView.reloadData()
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    
+   
 
     // MARK: - Segues
 
@@ -196,6 +235,12 @@ class MasterViewController: UITableViewController {
         }
         
         return cell;
+    }
+
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     

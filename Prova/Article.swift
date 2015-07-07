@@ -27,6 +27,7 @@ struct Article {
     init(_title:String, _dateStr:String, _authors:String, _image:String, _website:String, _content:String, _readStatus:Bool) {
         title = _title
         dateStr = _dateStr
+        date = stringToDate(dateStr!)
         authors = _authors
         image = _image
         website = _website

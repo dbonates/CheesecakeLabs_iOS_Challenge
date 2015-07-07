@@ -36,8 +36,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ckl-logo" translatesAutoresizingMaskIntoConstraints="NO" id="qW0-b1-GoV">
-                                <rect key="frame" x="116" y="72" width="337" height="179"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ckl-logo" translatesAutoresizingMaskIntoConstraints="NO" id="qW0-b1-GoV">
+                                <rect key="frame" x="116" y="118" width="337" height="133"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="233" id="BD0-o7-BSC">
                                         <variation key="heightClass=compact" constant="133"/>
@@ -136,8 +136,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="VYZ-m1-M3r">
+                            <rect key="frame" x="0.0" y="64" width="600" height="51"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSm-dc-czl">
+                                    <rect key="frame" x="198" y="10" width="46" height="30"/>
+                                    <state key="normal" title="Author">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="heightClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="41" y="218" width="46" height="30"/>
+                                    </variation>
+                                    <connections>
+                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="cQK-ZF-oNv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeO-Za-pBV">
+                                    <rect key="frame" x="268" y="10" width="55" height="30"/>
+                                    <state key="normal" title="Website">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="heightClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="41" y="256" width="55" height="30"/>
+                                    </variation>
+                                    <connections>
+                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="FVB-f3-e1v"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1o-fD-qER">
+                                    <rect key="frame" x="140" y="10" width="30" height="30"/>
+                                    <state key="normal" title="Title">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="heightClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="41" y="180" width="30" height="30"/>
+                                    </variation>
+                                    <connections>
+                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="pl8-Dv-Kw6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W8-Di-kK2">
+                                    <rect key="frame" x="76" y="10" width="32" height="30"/>
+                                    <state key="normal" title="Date">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="M4C-Tt-E8y"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbl-yg-bu9">
+                                    <rect key="frame" x="8" y="18" width="59" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="16" y="79" width="105" height="21"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.11764705882352941" green="0.14901960784313725" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="125" id="WCw-Qf-5nD" customClass="ArticleTableViewCell" customModule="Prova" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="125" id="WCw-Qf-5nD" customClass="ArticleTableViewCell" customModule="Prova" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
@@ -185,6 +246,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Posts" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <outlet property="authorSortBtn" destination="dSm-dc-czl" id="6I6-L1-S3a"/>
+                        <outlet property="dateSortBtn" destination="6W8-Di-kK2" id="Pbx-wf-LxM"/>
+                        <outlet property="sortMenuView" destination="VYZ-m1-M3r" id="tKL-7j-KLm"/>
+                        <outlet property="titleSortBtn" destination="T1o-fD-qER" id="T0I-2R-csa"/>
+                        <outlet property="websiteSortBtn" destination="IeO-Za-pBV" id="8qd-6k-QZ4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
