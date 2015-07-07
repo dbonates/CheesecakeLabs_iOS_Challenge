@@ -22,8 +22,8 @@ class ArticleTableViewCell: UITableViewCell {
        
         self.articleImageView.layer.cornerRadius = self.articleImageView.frame.size.width/2
         self.articleImageView.clipsToBounds = true
-        self.articleImageView.backgroundColor = darkLightColor
-        self.articleImageView.layer.borderWidth = 1.0
+        self.articleImageView.backgroundColor = blueColor
+        self.articleImageView.layer.borderWidth = 2.0
         self.articleImageView.layer.borderColor = UIColor.whiteColor().CGColor
         
         
@@ -46,8 +46,8 @@ class ArticleTableViewCell: UITableViewCell {
     
     func configureRead() {
         self.accessoryType = UITableViewCellAccessoryType.Checkmark
-        self.titleLbl.textColor = grayLightColor
-        self.authorsLbl.textColor = grayLightColor
+        self.titleLbl.textColor = blueLightColor
+        self.authorsLbl.textColor = blueLightColor
         self.articleImageView.image = convertImageToGrayScale(self.articleImageView.image!)
     }
     

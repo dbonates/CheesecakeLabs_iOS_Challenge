@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		375CB95B1B4C774000BEE888 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375CB95A1B4C774000BEE888 /* Images.xcassets */; };
 		37AE8D491B4C390100536AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D481B4C390100536AE2 /* AppDelegate.swift */; };
 		37AE8D4B1B4C390100536AE2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D4A1B4C390100536AE2 /* MasterViewController.swift */; };
 		37AE8D4D1B4C390100536AE2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D4C1B4C390100536AE2 /* DetailViewController.swift */; };
 		37AE8D501B4C390100536AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE8D4E1B4C390100536AE2 /* Main.storyboard */; };
-		37AE8D521B4C390100536AE2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE8D511B4C390100536AE2 /* Images.xcassets */; };
 		37AE8D551B4C390100536AE2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE8D531B4C390100536AE2 /* LaunchScreen.xib */; };
 		37AE8D611B4C390100536AE2 /* ProvaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D601B4C390100536AE2 /* ProvaTests.swift */; };
 		37AE8D6D1B4C3F3A00536AE2 /* Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D6C1B4C3F3A00536AE2 /* Lib.swift */; };
@@ -32,13 +32,13 @@
 
 /* Begin PBXFileReference section */
 		0CDE0070A16CF967A25C2381 /* Pods-Prova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prova/Pods-Prova.release.xcconfig"; sourceTree = "<group>"; };
+		375CB95A1B4C774000BEE888 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		37AE8D431B4C390100536AE2 /* Prova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE8D471B4C390100536AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37AE8D481B4C390100536AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AE8D4A1B4C390100536AE2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		37AE8D4C1B4C390100536AE2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		37AE8D4F1B4C390100536AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		37AE8D511B4C390100536AE2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		37AE8D541B4C390100536AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		37AE8D5A1B4C390100536AE2 /* ProvaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProvaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE8D5F1B4C390100536AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 				37AE8D6E1B4C402F00536AE2 /* Article.swift */,
 				37AE8D721B4C444F00536AE2 /* ArticleTableViewCell.swift */,
 				37AE8D4E1B4C390100536AE2 /* Main.storyboard */,
-				37AE8D511B4C390100536AE2 /* Images.xcassets */,
 				37AE8D531B4C390100536AE2 /* LaunchScreen.xib */,
+				375CB95A1B4C774000BEE888 /* Images.xcassets */,
 				37AE8D761B4C4C1B00536AE2 /* README.md */,
 				37AE8D461B4C390100536AE2 /* Supporting Files */,
 			);
@@ -233,9 +233,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375CB95B1B4C774000BEE888 /* Images.xcassets in Resources */,
 				37AE8D501B4C390100536AE2 /* Main.storyboard in Resources */,
 				37AE8D551B4C390100536AE2 /* LaunchScreen.xib in Resources */,
-				37AE8D521B4C390100536AE2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

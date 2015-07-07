@@ -43,16 +43,13 @@ class MasterViewController: UITableViewController {
     // persistent data system
     var readArticles = [String:Bool]()
     var dataFilePath: String?
+    
+    var condensedRowHeight : CGFloat = 100.0
 
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // configuring the navbar for whole app
-        UINavigationBar.appearance().barTintColor = redLightColor
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-
         // get rotation notification for layouting stuff if needed
         UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
         
@@ -63,10 +60,11 @@ class MasterViewController: UITableViewController {
         
         
         // configuring the navbar for whole app
-        UINavigationBar.appearance().barTintColor = redLightColor
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().tintColor = blueColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
+        UIButton.appearance().tintColor = yellowColor
 
         
     }
@@ -75,6 +73,14 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // configuring the navbar for whole app
+        UINavigationBar.appearance().barTintColor = UIColor(red:1,  green:0.749,  blue:0.239, alpha:1)
+        UINavigationBar.appearance().tintColor = blueColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : blueColor]
+        
+
+        
         
         // the persistent system is simple and just track the status of items
         checkForHistory()
@@ -86,13 +92,14 @@ class MasterViewController: UITableViewController {
         }
         
         
-        self.sortMenuView.backgroundColor = bgColor
+        self.sortMenuView.backgroundColor = blueColor
         
         //set the default tableview design
         self.tableView.backgroundColor = bgColor
+        self.tableView.tintColor = yellowColor
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone && UIApplication.sharedApplication().statusBarOrientation.isLandscape   {
-            self.tableView.rowHeight = 80;
+            self.tableView.rowHeight = self.condensedRowHeight;
         }
         
         // start the app loading the articles
@@ -301,12 +308,23 @@ class MasterViewController: UITableViewController {
     }
     
     
+    // a little animation
+    // just for the pull request ;P
+    /*
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animateWithDuration(0.25, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1,1,1)
+        })
+    }
+    */
+    
     
     // MARK: - orientation fixes
     
     func manageRowHeight() {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone && UIApplication.sharedApplication().statusBarOrientation.isLandscape  {
-            self.tableView.rowHeight = 80.0;
+            self.tableView.rowHeight = self.condensedRowHeight;
         } else {
             self.tableView.rowHeight = 138.0;
             

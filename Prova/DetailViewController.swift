@@ -74,16 +74,38 @@ class DetailViewController: UIViewController {
         self.contentTxt.hidden = true
         self.articleImg.hidden = true
         
+        self.articleImg.layer.cornerRadius = 10.0
+        self.articleImg.clipsToBounds = true
+        self.articleImg.backgroundColor = blueColor
+        self.articleImg.layer.borderWidth = 2.0
+        self.articleImg.layer.borderColor = UIColor.whiteColor().CGColor
+        
         self.view.backgroundColor = bgColor
 
+        var frame = self.articleImg.frame
+        
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             
-            var frame = self.articleImg.frame
+            
             frame.size.height = 500
             self.articleImg.frame = frame
-            self.titleLbl.font = UIFont(name: "American Typewriter", size: 28.0)
-            self.autdataLbl.font = UIFont(name: "American Typewriter", size: 22.0)
-            self.contentTxt.font = UIFont(name: "Helvetica", size: 22.0)
+            self.titleLbl.font = UIFont(name: "American Typewriter", size: 25.0)
+            self.autdataLbl.font = UIFont(name: "Helveteica Neue", size: 20.0)
+            self.contentTxt.font = UIFont(name: "Helvetica", size: 18.0)
+            
+        } else if(UIDevice.currentDevice().userInterfaceIdiom == .Phone && UIApplication.sharedApplication().statusBarOrientation.isPortrait) {
+            
+            self.titleLbl.font = UIFont(name: "American Typewriter", size: 22.0)
+            self.autdataLbl.font = UIFont(name: "Helveteica Neue", size: 18.0)
+            self.contentTxt.font = UIFont(name: "Helvetica", size: 15.0)
+        } else {
+            
+            frame.size.height = 300
+            self.articleImg.frame = frame
+            self.titleLbl.font = UIFont(name: "American Typewriter", size: 20.0)
+            self.autdataLbl.font = UIFont(name: "Helveteica Neue", size: 15.0)
+            self.contentTxt.font = UIFont(name: "Helvetica", size: 15.0)
+            
         }
         
         self.updateView()
