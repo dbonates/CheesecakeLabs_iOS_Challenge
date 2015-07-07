@@ -1,0 +1,6 @@
+framework module Pods_Prova {
+  umbrella header "Pods-Prova-umbrella.h"
+
+  export *
+  module * { export * }
+}

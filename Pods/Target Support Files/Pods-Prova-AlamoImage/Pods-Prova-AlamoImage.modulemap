@@ -1,0 +1,6 @@
+framework module AlamoImage {
+  umbrella header "Pods-Prova-AlamoImage-umbrella.h"
+
+  export *
+  module * { export * }
+}

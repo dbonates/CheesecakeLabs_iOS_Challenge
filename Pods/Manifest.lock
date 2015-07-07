@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (1.2.3)
+  - AlamoImage (0.2.1):
+    - AlamoImage/Core (= 0.2.1)
+  - AlamoImage/Common (0.2.1):
+    - Alamofire (~> 1.2)
+  - AlamoImage/Core (0.2.1):
+    - AlamoImage/Common
+  - SwiftyJSON (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 1.2)
+  - AlamoImage (~> 0.2)
+  - SwiftyJSON (~> 2.2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  AlamoImage: 9a78916730def069963937a0c3a82514f619d5b7
+  SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
+
+COCOAPODS: 0.37.2
