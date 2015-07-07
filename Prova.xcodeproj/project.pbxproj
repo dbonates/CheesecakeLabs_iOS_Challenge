@@ -17,6 +17,7 @@
 		37AE8D6D1B4C3F3A00536AE2 /* Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D6C1B4C3F3A00536AE2 /* Lib.swift */; };
 		37AE8D6F1B4C402F00536AE2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D6E1B4C402F00536AE2 /* Article.swift */; };
 		37AE8D731B4C444F00536AE2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D721B4C444F00536AE2 /* ArticleTableViewCell.swift */; };
+		37AE8D751B4C492F00536AE2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 37AE8D741B4C492F00536AE2 /* README.md */; };
 		C49BE207A4862C6F596D7566 /* Pods_Prova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE23C005245F07008004EA26 /* Pods_Prova.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		37AE8D6C1B4C3F3A00536AE2 /* Lib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lib.swift; sourceTree = "<group>"; };
 		37AE8D6E1B4C402F00536AE2 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		37AE8D721B4C444F00536AE2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		37AE8D741B4C492F00536AE2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7EA5534C0D637BB7681D0C2E /* Pods-Prova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prova/Pods-Prova.debug.xcconfig"; sourceTree = "<group>"; };
 		FE23C005245F07008004EA26 /* Pods_Prova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 		37AE8D451B4C390100536AE2 /* Prova */ = {
 			isa = PBXGroup;
 			children = (
+				37AE8D741B4C492F00536AE2 /* README.md */,
 				37AE8D481B4C390100536AE2 /* AppDelegate.swift */,
 				37AE8D4A1B4C390100536AE2 /* MasterViewController.swift */,
 				37AE8D4C1B4C390100536AE2 /* DetailViewController.swift */,
@@ -301,6 +304,7 @@
 			files = (
 				37AE8D4D1B4C390100536AE2 /* DetailViewController.swift in Sources */,
 				37AE8D4B1B4C390100536AE2 /* MasterViewController.swift in Sources */,
+				37AE8D751B4C492F00536AE2 /* README.md in Sources */,
 				37AE8D491B4C390100536AE2 /* AppDelegate.swift in Sources */,
 				37AE8D6D1B4C3F3A00536AE2 /* Lib.swift in Sources */,
 				37AE8D731B4C444F00536AE2 /* ArticleTableViewCell.swift in Sources */,
