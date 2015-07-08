@@ -22,7 +22,7 @@ The applicant must develop an iOS app that fetches the JSON list of articles ava
  	
 ####Extras
 - Use cool GitHub libraries to aid the development;
-	- `√ Done. SwiftyJSON, Alamofire, AlamoImage and Reveal-iOS-SDK for debug UI`
+	- `√ Done. SwiftyJSON, Alamofire, AlamoImage, MZFormSheetPresentationController and Reveal-iOS-SDK for debug UI`
 - Tablet-adaptive layout;
 	- `√ Done`
 - Persistent info;

@@ -50,10 +50,16 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AlamoImage.framework'
   install_framework 'Alamofire.framework'
+  install_framework 'JGMethodSwizzler.framework'
+  install_framework 'MZAppearance.framework'
+  install_framework 'MZFormSheetPresentationController.framework'
   install_framework 'SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AlamoImage.framework'
   install_framework 'Alamofire.framework'
+  install_framework 'JGMethodSwizzler.framework'
+  install_framework 'MZAppearance.framework'
+  install_framework 'MZFormSheetPresentationController.framework'
   install_framework 'SwiftyJSON.framework'
 fi

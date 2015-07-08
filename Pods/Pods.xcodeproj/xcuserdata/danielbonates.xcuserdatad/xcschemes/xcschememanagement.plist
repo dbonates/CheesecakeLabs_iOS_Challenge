@@ -14,6 +14,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Prova-JGMethodSwizzler.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Prova-MZAppearance.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Prova-MZFormSheetPresentationController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Prova-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>585F91A31842213934D68297</key>
+		<key>2AB2595A7D5DC6BED3DB821A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9241C5C66223AC8E3236107</key>
+		<key>5546251D3F7D972F5B1D094B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAB46CA76013D4B000F44726</key>
+		<key>58D4EF311E8B4913CCDD1574</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E71C7BB295700AAA4B935F80</key>
+		<key>7A2F44F445473A9586A0B087</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A8DB874DBEA37A9A0B126E0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8ADD71E2CFC0849CB86A974</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BDCB974A3A01DBCB3FC8B847</key>
 		<dict>
 			<key>primary</key>
 			<true/>

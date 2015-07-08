@@ -14,6 +14,10 @@ import SwiftyJSON
 import Alamofire
 import AlamoImage
 
+
+import MZFormSheetPresentationController
+
+
 // a little extension for toogle masterviewcontroller when item is selected on iPad Vertical orientation
 extension UISplitViewController {
     func toggleMasterView() {
@@ -26,10 +30,6 @@ class MasterViewController: UITableViewController {
     
     // Sort menu view
     @IBOutlet weak var sortMenuView: UIView!
-    @IBOutlet weak var dateSortBtn: UIButton!
-    @IBOutlet weak var titleSortBtn: UIButton!
-    @IBOutlet weak var authorSortBtn: UIButton!
-    @IBOutlet weak var websiteSortBtn: UIButton!
 
     var detailViewController: DetailViewController? = nil
     
@@ -58,15 +58,6 @@ class MasterViewController: UITableViewController {
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
         
-        
-        // configuring the navbar for whole app
-        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().tintColor = blueColor
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-        
-        UIButton.appearance().tintColor = yellowColor
-
-        
     }
     
     // MARK: - Loaded!
@@ -79,7 +70,7 @@ class MasterViewController: UITableViewController {
         UINavigationBar.appearance().tintColor = blueColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : blueColor]
         
-
+        UIButton.appearance().tintColor = yellowColor
         
         
         // the persistent system is simple and just track the status of items
@@ -92,7 +83,15 @@ class MasterViewController: UITableViewController {
         }
         
         
+        // sort menu & setup
         self.sortMenuView.backgroundColor = blueColor
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"ic_menu"), style: UIBarButtonItemStyle.Plain, target: self, action: "toogleSortMenu")
+        MZFormSheetPresentationController.appearance().shouldApplyBackgroundBlurEffect = true // for blue fx
+        // sort notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "sortNotificationSent:", name: sortNotificationKey, object: nil)
+        
+        // reset readStatus notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setAllItemsAsUnread", name: unreadAllNotificationKey, object: nil)
         
         //set the default tableview design
         self.tableView.backgroundColor = bgColor
@@ -101,6 +100,7 @@ class MasterViewController: UITableViewController {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone && UIApplication.sharedApplication().statusBarOrientation.isLandscape   {
             self.tableView.rowHeight = self.condensedRowHeight;
         }
+        
         
         // start the app loading the articles
         loadArticles()
@@ -149,7 +149,8 @@ class MasterViewController: UITableViewController {
                 readArticles[title] = false; //force it to be present, if not
             }
             
-            self.articles.append(Article(_title: title, _dateStr: date, _authors: authors, _image: image, _website: website, _content: content, _readStatus:read))
+            var article = Article(_title: title, _dateStr: date, _authors: authors, _image: image, _website: website, _content: content, _readStatus:read)
+            self.articles.append(article)
         }
         
         
@@ -176,31 +177,63 @@ class MasterViewController: UITableViewController {
     
     // MARK: - Sorting functions & related
     
-    @IBAction func sortArticles(sender: AnyObject) {
+    func sortNotificationSent(notification:NSNotification) {
         
+        let userInfo:Dictionary<String,String!> = notification.userInfo as! Dictionary<String,String!>
+        sortArticles(userInfo["sortKey"]!)
+    }
+    
+    func toogleSortMenu() {
         
-        if(sender as! NSObject == self.titleSortBtn) {
-            self.articles = self.articles.sorted({$0.title < $1.title})
-        }
-        else if(sender as! NSObject == self.websiteSortBtn) {
-            self.articles = self.articles.sorted({$0.website < $1.website})
-        }
-        else if(sender as! NSObject == self.authorSortBtn) {
-            self.articles = self.articles.sorted({$0.authors < $1.authors})
-        }
-        else if(sender as! NSObject == self.dateSortBtn) {
-            
-            // in this case, most recent first (descending)
-            self.articles = self.articles.sorted({$0.date!.timeIntervalSinceNow > $1.date!.timeIntervalSinceNow})
-            self.tableView.reloadData()
-        }
+        let sortViewController = self.storyboard!.instantiateViewControllerWithIdentifier("sortViewController") as! UIViewController
+        let formSheetController = MZFormSheetPresentationController(contentViewController: sortViewController)
+        formSheetController.blurEffectStyle = UIBlurEffectStyle.Light
+        formSheetController.shouldDismissOnBackgroundViewTap = true
+        formSheetController.contentViewControllerTransitionStyle = MZFormSheetPresentationTransitionStyle.StyleSlideAndBounceFromRight
         
+        formSheetController.contentViewSize = CGSizeMake(320, 320)
+        
+        self.presentViewController(formSheetController, animated: true, completion: nil)
+    }
+    
+    func sortArticles(sortKey: String) {
+        
+        switch sortKey {
+            case "date":
+                self.articles = self.articles.sorted({$0.date!.timeIntervalSinceNow > $1.date!.timeIntervalSinceNow})
+            case "title":
+                self.articles = self.articles.sorted({$0.title < $1.title})
+            case "author":
+                self.articles = self.articles.sorted({$0.authors < $1.authors})
+            case "website":
+                self.articles = self.articles.sorted({$0.website < $1.website})
+            default:
+                self.articles = self.articles.sorted({$0.date!.timeIntervalSinceNow > $1.date!.timeIntervalSinceNow})
+        }
         
         self.tableView.reloadData()
 
     }
     
     
+    // MARK: - Reset all item to unread status
+    func setAllItemsAsUnread() {
+        
+        for (var i=0; i<self.articles.count;i++) {
+            
+            let item = self.articles[i]
+            
+            self.readArticles[item.title!] = false
+            
+            var art = Article(_title: item.title!, _dateStr: item.dateStr!, _authors: item.authors!, _image: item.image!, _website: item.website!, _content: item.content!, _readStatus: false)
+            
+            self.articles[i] = art
+            
+        }
+//
+        saveReadArticles()
+        self.tableView.reloadData()
+    }
    
 
     // MARK: - Segues
@@ -257,7 +290,7 @@ class MasterViewController: UITableViewController {
             */
             if let img = self.imageCache[imgUrlStr] {
                 
-                if(articles[indexPath.row].readStatus == true) {
+                if(self.readArticles[articles[indexPath.row].title!] == true) {
                     cell.articleImageView?.image = convertImageToGrayScale(img)
                 } else {
                     cell.articleImageView?.image = img

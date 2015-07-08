@@ -6,16 +6,25 @@ PODS:
     - Alamofire (~> 1.2)
   - AlamoImage/Core (0.2.1):
     - AlamoImage/Common
+  - JGMethodSwizzler (2.0.1)
+  - MZAppearance (1.1.5)
+  - MZFormSheetPresentationController (1.1.2):
+    - JGMethodSwizzler
+    - MZAppearance
   - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 1.2)
   - AlamoImage (~> 0.2)
+  - MZFormSheetPresentationController (~> 1.1)
   - SwiftyJSON (~> 2.2.0)
 
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
   AlamoImage: 9a78916730def069963937a0c3a82514f619d5b7
+  JGMethodSwizzler: e0ea5c1c6c55304ec4ef3f54e441400c6735c899
+  MZAppearance: 6e9dc64e42074c0a19812a327f590746c3283bab
+  MZFormSheetPresentationController: 2e848d89c0741aef554d0ae6b138be5dc25a479f
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
 COCOAPODS: 0.37.2

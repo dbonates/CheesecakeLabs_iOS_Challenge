@@ -20,6 +20,10 @@ let blueColor = UIColor(red:0.165,  green:0.506,  blue:0.596, alpha:1)
 let blueLightColor = UIColor(red:0.690,  green:0.839,  blue:0.875, alpha:1)
 
 
+// for sort notification
+let sortNotificationKey = "com.ckl.sortNotificationKey"
+let unreadAllNotificationKey = "com.ckl.unreadAllNotificationKey"
+
 // get string date fetched and turns it into a NSDate object
 func stringToDate(dateStr:String) -> NSDate {
     

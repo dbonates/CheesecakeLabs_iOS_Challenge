@@ -30,6 +30,24 @@
 #define COCOAPODS_VERSION_MINOR_Alamofire 2
 #define COCOAPODS_VERSION_PATCH_Alamofire 3
 
+// JGMethodSwizzler
+#define COCOAPODS_POD_AVAILABLE_JGMethodSwizzler
+#define COCOAPODS_VERSION_MAJOR_JGMethodSwizzler 2
+#define COCOAPODS_VERSION_MINOR_JGMethodSwizzler 0
+#define COCOAPODS_VERSION_PATCH_JGMethodSwizzler 1
+
+// MZAppearance
+#define COCOAPODS_POD_AVAILABLE_MZAppearance
+#define COCOAPODS_VERSION_MAJOR_MZAppearance 1
+#define COCOAPODS_VERSION_MINOR_MZAppearance 1
+#define COCOAPODS_VERSION_PATCH_MZAppearance 5
+
+// MZFormSheetPresentationController
+#define COCOAPODS_POD_AVAILABLE_MZFormSheetPresentationController
+#define COCOAPODS_VERSION_MAJOR_MZFormSheetPresentationController 1
+#define COCOAPODS_VERSION_MINOR_MZFormSheetPresentationController 1
+#define COCOAPODS_VERSION_PATCH_MZFormSheetPresentationController 2
+
 // SwiftyJSON
 #define COCOAPODS_POD_AVAILABLE_SwiftyJSON
 #define COCOAPODS_VERSION_MAJOR_SwiftyJSON 2

@@ -37,7 +37,7 @@ class ArticleTableViewCell: UITableViewCell {
         self.authorsLbl!.text = article.authors! + ", " + article.dateStr!
         self.authorsLbl!.sizeToFit()
         
-        if(article.readStatus!) {
+        if(article.readStatus == true) {
             configureRead()
         } else {
             configureNotRead()

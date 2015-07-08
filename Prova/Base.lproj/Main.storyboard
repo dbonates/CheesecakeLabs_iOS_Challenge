@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -128,9 +130,6 @@
                                 <exclude reference="jca-ub-Mcp"/>
                                 <exclude reference="m1g-q2-lNG"/>
                                 <exclude reference="wcq-xq-k2M"/>
-                                <exclude reference="QiB-cQ-Vem"/>
-                                <exclude reference="kVk-b4-2kK"/>
-                                <exclude reference="p07-7R-pwh"/>
                                 <exclude reference="Vst-ve-feo"/>
                                 <exclude reference="huA-lB-Kf6"/>
                                 <exclude reference="k0G-7E-t6E"/>
@@ -139,6 +138,9 @@
                                 <exclude reference="NJu-xc-BHX"/>
                                 <exclude reference="bXB-pt-x2c"/>
                                 <exclude reference="oBq-Dm-i3C"/>
+                                <exclude reference="QiB-cQ-Vem"/>
+                                <exclude reference="kVk-b4-2kK"/>
+                                <exclude reference="p07-7R-pwh"/>
                                 <exclude reference="bbj-pE-F0Q"/>
                             </mask>
                         </variation>
@@ -151,11 +153,6 @@
                                 <exclude reference="W83-NT-Z7g"/>
                                 <include reference="m1g-q2-lNG"/>
                                 <include reference="wcq-xq-k2M"/>
-                                <exclude reference="8QG-p7-c7K"/>
-                                <include reference="QiB-cQ-Vem"/>
-                                <exclude reference="k5N-5D-SE1"/>
-                                <include reference="kVk-b4-2kK"/>
-                                <include reference="p07-7R-pwh"/>
                                 <include reference="Vst-ve-feo"/>
                                 <exclude reference="gph-ia-cfv"/>
                                 <exclude reference="hLv-13-BIL"/>
@@ -171,6 +168,11 @@
                                 <exclude reference="b2v-oP-jWi"/>
                                 <exclude reference="lJa-W6-xYD"/>
                                 <include reference="oBq-Dm-i3C"/>
+                                <exclude reference="8QG-p7-c7K"/>
+                                <include reference="QiB-cQ-Vem"/>
+                                <exclude reference="k5N-5D-SE1"/>
+                                <include reference="kVk-b4-2kK"/>
+                                <include reference="p07-7R-pwh"/>
                                 <include reference="bbj-pE-F0Q"/>
                             </mask>
                         </variation>
@@ -211,71 +213,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="VYZ-m1-M3r">
-                            <rect key="frame" x="0.0" y="64" width="600" height="51"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="13"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSm-dc-czl">
-                                    <rect key="frame" x="170" y="10" width="46" height="30"/>
-                                    <state key="normal" title="Author">
-                                        <color key="titleColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <variation key="heightClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="204" y="11" width="46" height="30"/>
-                                    </variation>
-                                    <connections>
-                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="cQK-ZF-oNv"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1o-fD-qER">
-                                    <rect key="frame" x="120" y="10" width="30" height="30"/>
-                                    <state key="normal" title="Title">
-                                        <color key="titleColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <variation key="heightClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="138" y="11" width="30" height="30"/>
-                                    </variation>
-                                    <connections>
-                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="pl8-Dv-Kw6"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W8-Di-kK2">
-                                    <rect key="frame" x="63" y="10" width="32" height="30"/>
-                                    <state key="normal" title="Date">
-                                        <color key="titleColor" red="1" green="0.99607843137254903" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <variation key="heightClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="71" y="11" width="32" height="30"/>
-                                    </variation>
-                                    <connections>
-                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="M4C-Tt-E8y"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbl-yg-bu9">
-                                    <rect key="frame" x="8" y="18" width="39" height="16"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                    <color key="textColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                    <variation key="heightClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="0.0" y="14" width="55" height="21"/>
-                                    </variation>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeO-Za-pBV">
-                                    <rect key="frame" x="235" y="10" width="55" height="30"/>
-                                    <state key="normal" title="Website">
-                                        <color key="titleColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <variation key="heightClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="280" y="11" width="55" height="30"/>
-                                    </variation>
-                                    <connections>
-                                        <action selector="sortArticles:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="FVB-f3-e1v"/>
-                                    </connections>
-                                </button>
-                            </subviews>
                             <color key="backgroundColor" red="0.17647058823529413" green="0.43529411764705883" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <prototypes>
@@ -334,16 +273,186 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Posts" id="Zdf-7t-Un8"/>
                     <connections>
-                        <outlet property="authorSortBtn" destination="dSm-dc-czl" id="6I6-L1-S3a"/>
-                        <outlet property="dateSortBtn" destination="6W8-Di-kK2" id="Pbx-wf-LxM"/>
                         <outlet property="sortMenuView" destination="VYZ-m1-M3r" id="tKL-7j-KLm"/>
-                        <outlet property="titleSortBtn" destination="T1o-fD-qER" id="T0I-2R-csa"/>
-                        <outlet property="websiteSortBtn" destination="IeO-Za-pBV" id="8qd-6k-QZ4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
+        </scene>
+        <!--Sort Menu View Controller-->
+        <scene sceneID="R6m-0L-GLY">
+            <objects>
+                <viewController storyboardIdentifier="sortViewController" id="i2K-rL-MJd" customClass="SortMenuViewController" customModule="Prova" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z1e-s7-Aij"/>
+                        <viewControllerLayoutGuide type="bottom" id="0he-NI-3YE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vSU-Qs-5At">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shL-xK-MQv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jK-Om-LXc">
+                                        <rect key="frame" x="8" y="164" width="304" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Rpw-BQ-wye"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                                        <state key="normal" title="Author">
+                                            <color key="titleColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="204" y="11" width="46" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="postSortNotification:" destination="i2K-rL-MJd" eventType="touchUpInside" id="ekw-xS-SMf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmh-TX-FUM">
+                                        <rect key="frame" x="8" y="109" width="304" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mOP-z5-uVj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                                        <state key="normal" title="Title">
+                                            <color key="titleColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="138" y="11" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="postSortNotification:" destination="i2K-rL-MJd" eventType="touchUpInside" id="QQ7-Qy-CSr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KE1-lt-0SW">
+                                        <rect key="frame" x="8" y="54" width="304" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="t68-yM-DaH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                                        <state key="normal" title="Date">
+                                            <color key="titleColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="71" y="11" width="32" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="postSortNotification:" destination="i2K-rL-MJd" eventType="touchUpInside" id="KBg-zX-oLa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOU-Jq-GzD">
+                                        <rect key="frame" x="8" y="202" width="304" height="60"/>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="22"/>
+                                        <state key="normal" title="Website">
+                                            <color key="titleColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="280" y="11" width="55" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="postSortNotification:" destination="i2K-rL-MJd" eventType="touchUpInside" id="DCX-dR-3bf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fiv-cJ-7YR">
+                                        <rect key="frame" x="8" y="252" width="183" height="60"/>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                        <state key="normal" title="* Mark all as unread *">
+                                            <color key="titleColor" red="0.97784745069736834" green="0.23846114309999999" blue="0.25313527959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="280" y="11" width="55" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="postUnreadAllNotification:" destination="i2K-rL-MJd" eventType="touchUpInside" id="Tdh-wZ-UUC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWa-hp-N4M">
+                                        <rect key="frame" x="217" y="252" width="95" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="gv0-iF-hqj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.97784745070000001" green="0.23846114309999999" blue="0.25313527959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="280" y="11" width="55" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="cancel:" destination="i2K-rL-MJd" eventType="touchUpInside" id="fnq-uV-KBQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78J-B1-wJK">
+                                        <rect key="frame" x="8" y="8" width="304" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="8tS-R5-H9C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                        <color key="textColor" red="0.1764705882" green="0.43529411759999997" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="14" width="55" height="21"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tWa-hp-N4M" firstAttribute="top" secondItem="Fiv-cJ-7YR" secondAttribute="top" id="1hV-Ze-ibv"/>
+                                    <constraint firstItem="tWa-hp-N4M" firstAttribute="trailing" secondItem="rOU-Jq-GzD" secondAttribute="trailing" id="23v-GD-gaO"/>
+                                    <constraint firstItem="rOU-Jq-GzD" firstAttribute="top" secondItem="8jK-Om-LXc" secondAttribute="bottom" constant="8" symbolic="YES" id="2aE-9y-k85"/>
+                                    <constraint firstItem="78J-B1-wJK" firstAttribute="trailing" secondItem="KE1-lt-0SW" secondAttribute="trailing" id="5Lp-ao-FzR"/>
+                                    <constraint firstItem="KE1-lt-0SW" firstAttribute="leading" secondItem="Hmh-TX-FUM" secondAttribute="leading" id="8mK-mj-z02"/>
+                                    <constraint firstItem="tWa-hp-N4M" firstAttribute="leading" secondItem="Fiv-cJ-7YR" secondAttribute="trailing" constant="26" id="8tr-VU-7Im"/>
+                                    <constraint firstItem="78J-B1-wJK" firstAttribute="leading" secondItem="KE1-lt-0SW" secondAttribute="leading" id="CVf-ac-kx9"/>
+                                    <constraint firstItem="Hmh-TX-FUM" firstAttribute="top" secondItem="KE1-lt-0SW" secondAttribute="bottom" constant="25" id="CxO-WB-SpV"/>
+                                    <constraint firstItem="Hmh-TX-FUM" firstAttribute="leading" secondItem="8jK-Om-LXc" secondAttribute="leading" id="FFr-bR-05h"/>
+                                    <constraint firstItem="Fiv-cJ-7YR" firstAttribute="leading" secondItem="shL-xK-MQv" secondAttribute="leadingMargin" id="Hm1-eW-gCR"/>
+                                    <constraint firstItem="8jK-Om-LXc" firstAttribute="trailing" secondItem="rOU-Jq-GzD" secondAttribute="trailing" id="NXw-fh-dTn"/>
+                                    <constraint firstItem="78J-B1-wJK" firstAttribute="top" secondItem="shL-xK-MQv" secondAttribute="topMargin" id="NpU-9a-T4M"/>
+                                    <constraint firstItem="8jK-Om-LXc" firstAttribute="top" secondItem="Hmh-TX-FUM" secondAttribute="bottom" constant="25" id="Qr6-jg-7TL"/>
+                                    <constraint firstAttribute="bottom" secondItem="rOU-Jq-GzD" secondAttribute="bottom" constant="58" id="TH5-MI-kmQ"/>
+                                    <constraint firstItem="KE1-lt-0SW" firstAttribute="top" secondItem="78J-B1-wJK" secondAttribute="bottom" constant="8" symbolic="YES" id="UpP-zg-XwK"/>
+                                    <constraint firstItem="8jK-Om-LXc" firstAttribute="trailing" secondItem="Hmh-TX-FUM" secondAttribute="trailing" id="XLI-wt-kXv"/>
+                                    <constraint firstItem="tWa-hp-N4M" firstAttribute="baseline" secondItem="Fiv-cJ-7YR" secondAttribute="firstBaseline" id="YYg-vW-tg1"/>
+                                    <constraint firstItem="rOU-Jq-GzD" firstAttribute="leading" secondItem="8jK-Om-LXc" secondAttribute="leading" id="dZl-SM-p7t"/>
+                                    <constraint firstItem="Fiv-cJ-7YR" firstAttribute="top" secondItem="8jK-Om-LXc" secondAttribute="bottom" constant="58" id="fka-NK-6yi"/>
+                                    <constraint firstItem="Hmh-TX-FUM" firstAttribute="trailing" secondItem="shL-xK-MQv" secondAttribute="trailingMargin" id="i4v-Tx-VM8"/>
+                                    <constraint firstItem="Fiv-cJ-7YR" firstAttribute="leading" secondItem="rOU-Jq-GzD" secondAttribute="leading" id="ja7-fw-aFy"/>
+                                    <constraint firstItem="Hmh-TX-FUM" firstAttribute="trailing" secondItem="KE1-lt-0SW" secondAttribute="trailing" id="pSr-Ar-7jg"/>
+                                    <constraint firstItem="Fiv-cJ-7YR" firstAttribute="bottom" secondItem="shL-xK-MQv" secondAttribute="bottomMargin" id="svA-CE-kOo"/>
+                                    <constraint firstItem="Fiv-cJ-7YR" firstAttribute="baseline" secondItem="tWa-hp-N4M" secondAttribute="firstBaseline" id="w1I-4Z-wqf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="shL-xK-MQv" firstAttribute="bottom" secondItem="0he-NI-3YE" secondAttribute="top" id="68A-Td-Ack"/>
+                            <constraint firstItem="shL-xK-MQv" firstAttribute="leading" secondItem="vSU-Qs-5At" secondAttribute="leading" id="g0s-n7-uwC"/>
+                            <constraint firstItem="shL-xK-MQv" firstAttribute="top" secondItem="vSU-Qs-5At" secondAttribute="top" id="wxa-eL-lzz"/>
+                            <constraint firstAttribute="trailing" secondItem="shL-xK-MQv" secondAttribute="trailing" id="zHx-Hc-muW"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="320"/>
+                    <connections>
+                        <outlet property="authorBtn" destination="8jK-Om-LXc" id="553-rH-UML"/>
+                        <outlet property="dateBtn" destination="KE1-lt-0SW" id="gcJ-FF-9CN"/>
+                        <outlet property="titleBtn" destination="Hmh-TX-FUM" id="wvS-mF-rvc"/>
+                        <outlet property="websiteBtn" destination="rOU-Jq-GzD" id="ZF2-hI-FPi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRD-Ah-CE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="-770"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
