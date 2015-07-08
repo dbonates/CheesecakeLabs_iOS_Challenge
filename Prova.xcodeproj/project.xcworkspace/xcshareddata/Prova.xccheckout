@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7365792F-FFEB-4670-8131-DEC7A597B08F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Prova</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F67A3189CC38AE12DD7B98F6AE28DAE5CF034286</key>
+		<string>https://github.com/dbonates/CheesecakeLabs_iOS_Challenge.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Prova.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F67A3189CC38AE12DD7B98F6AE28DAE5CF034286</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dbonates/CheesecakeLabs_iOS_Challenge.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F67A3189CC38AE12DD7B98F6AE28DAE5CF034286</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F67A3189CC38AE12DD7B98F6AE28DAE5CF034286</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Prova</string>
+		</dict>
+	</array>
+</dict>
+</plist>
