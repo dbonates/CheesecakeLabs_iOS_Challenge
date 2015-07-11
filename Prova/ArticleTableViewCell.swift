@@ -15,6 +15,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var authorsLbl: UILabel!
+    @IBOutlet weak var fioView: UIView!
     
 
     override func awakeFromNib() {
@@ -24,9 +25,9 @@ class ArticleTableViewCell: UITableViewCell {
         self.articleImageView.clipsToBounds = true
         self.articleImageView.backgroundColor = blueColor
         self.articleImageView.layer.borderWidth = 2.0
-        self.articleImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        
-        
+        self.articleImageView.layer.borderColor = blueLightColor.CGColor
+        self.fioView.backgroundColor = blueLightColor
+        self.fioView.layer.opacity = 0.3
         self.backgroundColor = bgColor;
     }
     

@@ -66,9 +66,11 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         // configuring the navbar for whole app
-        UINavigationBar.appearance().barTintColor = UIColor(red:1,  green:0.749,  blue:0.239, alpha:1)
-        UINavigationBar.appearance().tintColor = blueColor
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : blueColor]
+        UINavigationBar.appearance().barTintColor = yellowColor
+
+        if let font = UIFont(name: "Avenir-Book", size: 22) {
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: blueColor]
+        }
         
         UIButton.appearance().tintColor = yellowColor
         
@@ -86,6 +88,8 @@ class MasterViewController: UITableViewController {
         // sort menu & setup
         self.sortMenuView.backgroundColor = blueColor
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"ic_menu"), style: UIBarButtonItemStyle.Plain, target: self, action: "toogleSortMenu")
+        self.navigationItem.rightBarButtonItem?.tintColor = redLightColor
+        
         MZFormSheetPresentationController.appearance().shouldApplyBackgroundBlurEffect = true // for blue fx
         // sort notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "sortNotificationSent:", name: sortNotificationKey, object: nil)
@@ -187,7 +191,7 @@ class MasterViewController: UITableViewController {
         
         let sortViewController = self.storyboard!.instantiateViewControllerWithIdentifier("sortViewController") as! UIViewController
         let formSheetController = MZFormSheetPresentationController(contentViewController: sortViewController)
-        formSheetController.blurEffectStyle = UIBlurEffectStyle.Light
+        formSheetController.blurEffectStyle = UIBlurEffectStyle.Dark
         formSheetController.shouldDismissOnBackgroundViewTap = true
         formSheetController.contentViewControllerTransitionStyle = MZFormSheetPresentationTransitionStyle.StyleSlideAndBounceFromRight
         
@@ -250,23 +254,51 @@ class MasterViewController: UITableViewController {
                     controller.image = self.imageCache[article.image!]
                     
                     // set back buttons
-                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                    controller.navigationItem.leftItemsSupplementBackButton = true
+                    
+                    let backButton = UIBarButtonItem(title: "<<", style: UIBarButtonItemStyle.Plain, target: self, action: "goBack")
+                    
+                    controller.navigationItem.leftBarButtonItem = backButton
+                    // not using the default ones to save space
+//                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+//                    controller.navigationItem.leftItemsSupplementBackButton = true
+                    
+                    var navigationBarAppearace = UINavigationBar.appearance()
                     
                 }
             }
         }
     }
 
+    
+    func goBack() {
+        self.navigationController!.popViewControllerAnimated(true)
+    }
+    
     // MARK: - Table View
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(self.articles.count < 1) {
+            return 1;
+        }
+        
         return self.articles.count;
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:ArticleTableViewCell! = tableView.dequeueReusableCellWithIdentifier("Cell") as! ArticleTableViewCell
+        
+        if(self.articles.count < 1) {
+            cell.articleImageView.image = UIImage(named: "ckl-logo.png");
+            cell.titleLbl.text = "Updating articles..."
+            cell.authorsLbl.text = ""
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            return cell;
+            
+        }
+        
+        
+        
         
         if(cell == nil) {
             cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! ArticleTableViewCell
@@ -345,10 +377,13 @@ class MasterViewController: UITableViewController {
     // just for the pull request ;P
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
         UIView.animateWithDuration(0.25, animations: {
             cell.layer.transform = CATransform3DMakeScale(1,1,1)
         })
+        
+        
     }
 
     
